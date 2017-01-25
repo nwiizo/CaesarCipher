@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import string
-
 class CaesarCipher(object):
 
     def shift_text(self,c,shift):        
@@ -12,11 +10,11 @@ class CaesarCipher(object):
             return chr((ord(c) - ord('a') + int(shift)) % 26 + ord('a'))    
         return c
     
-    def encode(self,text,shift):
+    def encode(self,text,shift=13):
         g = [self.shift_text(c,shift) for c in list(text)]
         return ''.join(g)
 
-    def decode(self,text,shift):
+    def decode(self,text,shift=13):
         g = [self.shift_text(c,-shift) for c in list(text)]
         return ''.join(g)
 
